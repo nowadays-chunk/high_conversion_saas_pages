@@ -1,0 +1,276 @@
+/* Theme 5: Glassmorphism */
+
+:root {
+    --primary: #00d4ff;
+    --secondary: #7b68ee;
+    --accent: #ff6b9d;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f4f8;
+    --success: #00d68f;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-primary);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="200" cy="200" r="300" fill="rgba(255,255,255,0.1)"/><circle cx="900" cy="500" r="400" fill="rgba(255,255,255,0.08)"/><circle cx="400" cy="650" r="250" fill="rgba(255,255,255,0.05)"/></svg>');
+    z-index: -1;
+}
+
+.hero-section {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    color: white;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+    color: white;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.cta-primary {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    background: white;
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+}
+
+.trust-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trust-section .company-logo {
+    color: white;
+}
+
+.features-section {
+    background: transparent;
+}
+
+.section-title {
+    color: white;
+}
+
+.section-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+    color: white;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.testimonials-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.testimonial-card p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.pricing-section {
+    background: transparent;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.pricing-card:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card p,
+.pricing-card li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.pricing-card-featured {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(30px);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card-featured .section-subtitle,
+.pricing-card-featured p,
+.pricing-card-featured li {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.pricing-cta {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
+    border: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.pricing-cta:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card-featured .pricing-cta {
+    background: white;
+    color: var(--text-primary);
+}
+
+.cta-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.email-input {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: white;
+    background: white;
+}
+
+.footer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer a {
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer .border-t {
+    border-color: rgba(255, 255, 255, 0.2);
+}

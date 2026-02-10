@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - CloudSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link id="theme-link" rel="stylesheet" href="themes/theme-1.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Theme Switcher (reused from index) -->
+    <div class="theme-nav" id="themeNav"
+        style="position: fixed; top: 20px; right: 20px; z-index: 9999; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 12px; padding: 15px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); max-height: 600px; overflow-y: auto;">
+        <button class="theme-toggle-btn" onclick="toggleThemeNav()"
+            style="width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+            <i class="fas fa-palette"></i>
+        </button>
+        <div class="theme-list" id="themeList" style="display: none; margin-top: 15px;">
+            <h3
+                style="margin-bottom: 12px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                Choose Theme</h3>
+            <button class="theme-btn active" data-theme="1" onclick="changeTheme(1)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-gradient"></i> Modern Gradient</button>
+            <button class="theme-btn" data-theme="2" onclick="changeTheme(2)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: #f8f9fa; color: #212529; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-circle"></i> Minimal Clean</button>
+            <button class="theme-btn" data-theme="3" onclick="changeTheme(3)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-bolt"></i> Bold & Vibrant</button>
+            <button class="theme-btn" data-theme="4" onclick="changeTheme(4)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: #1a1a2e; color: #eee; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-moon"></i> Dark Premium</button>
+            <button class="theme-btn" data-theme="5" onclick="changeTheme(5)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); color: #333; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-gem"></i> Glassmorphism</button>
+            <button class="theme-btn" data-theme="6" onclick="changeTheme(6)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: #000; color: #fff; border: 3px solid #000; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-square"></i> Brutalist</button>
+            <button class="theme-btn" data-theme="7" onclick="changeTheme(7)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #8b4513; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-cloud"></i> Soft Pastel</button>
+            <button class="theme-btn" data-theme="8" onclick="changeTheme(8)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: #003d82; color: white; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-building"></i> Corporate Pro</button>
+            <button class="theme-btn" data-theme="9" onclick="changeTheme(9)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: #000; color: #0ff; border: 2px solid #0ff; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-robot"></i> Neon Cyber</button>
+            <button class="theme-btn" data-theme="10" onclick="changeTheme(10)"
+                style="width: 100%; padding: 12px 16px; margin: 8px 0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; background: linear-gradient(135deg, #2c1b47 0%, #5e3a7d 100%); color: #ffd700; display: flex; align-items: center; gap: 10px;"><i
+                    class="fas fa-crown"></i> Elegant Luxury</button>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header-nav" style="padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">CloudSync</a>
+            <nav class="hidden md:flex gap-8">
+                <div class="relative group">
+                    <a href="#" class="font-semibold">Product <i class="fas fa-chevron-down text-xs ml-1"></i></a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
+                        <a href="features.html" class="block px-4 py-2 hover:bg-gray-100">Features</a>
+                        <a href="pricing.html" class="block px-4 py-2 hover:bg-gray-100">Pricing</a>
+                        <a href="security.html" class="block px-4 py-2 hover:bg-gray-100">Security</a>
+                        <a href="roadmap.html" class="block px-4 py-2 hover:bg-gray-100">Roadmap</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="#" class="font-semibold">Company <i class="fas fa-chevron-down text-xs ml-1"></i></a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
+                        <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About</a>
+                        <a href="careers.html" class="block px-4 py-2 hover:bg-gray-100">Careers</a>
+                        <a href="blog.html" class="block px-4 py-2 hover:bg-gray-100">Blog</a>
+                        <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+                    </div>
+                </div>
+                <a href="docs.html" class="font-semibold">Docs</a>
+            </nav>
+            <div class="flex gap-4">
+                <a href="login.html" class="px-6 py-2 font-semibold">Login</a>
+                <a href="signup.html" class="cta-primary px-6 py-2 rounded-lg font-semibold">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Powerful Features for Modern Teams</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">Everything you need to store, sync, and
+                collaborate. Built for teams that demand excellence.</p>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features-section py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Bank-Level Security</h3>
+                    <p class="mb-4 opacity-80">256-bit AES encryption ensures your files are protected with
+                        military-grade security standards.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>End-to-end encryption</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Two-factor authentication</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>SOC 2
+                                Type II certified</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-sync-alt"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Real-Time Sync</h3>
+                    <p class="mb-4 opacity-80">Instant file synchronization across all devices. Changes appear
+                        everywhere in milliseconds.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Sub-second sync speed</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Offline
+                                mode support</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Conflict resolution</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-users"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Team Collaboration</h3>
+                    <p class="mb-4 opacity-80">Share folders, set permissions, and collaborate seamlessly with your
+                        entire team.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Granular permissions</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Team
+                                folders</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Activity tracking</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-history"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Version History</h3>
+                    <p class="mb-4 opacity-80">Never lose work again. Restore any file to a previous version with just
+                        one click.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Unlimited versions</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Compare
+                                versions</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Restore
+                                deleted files</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Mobile Access</h3>
+                    <p class="mb-4 opacity-80">Access your files on the go with native iOS and Android apps. Work from
+                        anywhere.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Native
+                                mobile apps</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Offline
+                                access</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Camera
+                                upload</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Analytics Dashboard</h3>
+                    <p class="mb-4 opacity-80">Get insights into storage usage, team activity, and file engagement with
+                        detailed analytics.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Usage
+                                reports</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Team
+                                activity logs</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Export
+                                data</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-code"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">API & Integrations</h3>
+                    <p class="mb-4 opacity-80">Connect with your favorite tools. Powerful API for custom integrations.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>RESTful
+                                API</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Webhooks</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>1000+
+                                integrations</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-search"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Smart Search</h3>
+                    <p class="mb-4 opacity-80">Find any file instantly with powerful full-text search and filters.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Full-text search</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Advanced filters</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Saved
+                                searches</span></li>
+                    </ul>
+                </div>
+
+                <!-- Feature 9 -->
+                <div class="feature-card p-8 rounded-xl">
+                    <div class="feature-icon text-5xl mb-4"><i class="fas fa-link"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Smart Sharing</h3>
+                    <p class="mb-4 opacity-80">Share files securely with password protection and expiration dates.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Password-protected links</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Expiration dates</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Download tracking</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-20">
+        <div class="container mx-auto px-6">
+            <div class="cta-box max-w-4xl mx-auto text-center p-12 rounded-2xl">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-xl mb-8 opacity-90">Start your 14-day free trial today. No credit card required.</p>
+                <a href="signup.html" class="cta-primary px-8 py-4 rounded-lg font-semibold inline-block">Start Free
+                    Trial <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-4">CloudSync</h4>
+                    <p class="opacity-70">Modern cloud storage for modern teams.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Product</h5>
+                    <ul class="space-y-2 opacity-70">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="roadmap.html">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Company</h5>
+                    <ul class="space-y-2 opacity-70">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Legal</h5>
+                    <ul class="space-y-2 opacity-70">
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="docs.html">Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t pt-8 text-center opacity-70">
+                <p>&copy; 2026 CloudSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let themeNavCollapsed = true;
+        function toggleThemeNav() {
+            const nav = document.getElementById('themeNav');
+            const list = document.getElementById('themeList');
+            themeNavCollapsed = !themeNavCollapsed;
+            if (themeNavCollapsed) { nav.classList.add('collapsed'); list.style.display = 'none'; }
+            else { nav.classList.remove('collapsed'); list.style.display = 'block'; }
+        }
+        function changeTheme(themeNumber) {
+            document.getElementById('theme-link').href = `themes/theme-${themeNumber}.css`;
+            document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-theme="${themeNumber}"]`).classList.add('active');
+            document.body.style.opacity = '0.8';
+            setTimeout(() => { document.body.style.opacity = '1'; }, 200);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+/* Theme 6: Brutalist */
+
+:root {
+    --primary: #ff0000;
+    --secondary: #000000;
+    --accent: #ffff00;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --success: #00ff00;
+}
+
+body {
+    background: white;
+    color: black;
+    font-family: 'Courier New', monospace;
+}
+
+.hero-section {
+    background: var(--accent);
+    color: black;
+    border: 8px solid black;
+    position: relative;
+}
+
+.badge {
+    background: black;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 900;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gradient-text {
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-thickness: 6px;
+    text-underline-offset: 8px;
+}
+
+.cta-primary {
+    background: black;
+    color: white;
+    border: 4px solid black;
+    font-weight: 900;
+    box-shadow: 8px 8px 0 var(--primary);
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+}
+
+.cta-primary:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0 var(--primary);
+}
+
+.cta-secondary {
+    background: white;
+    color: black;
+    border: 4px solid black;
+    font-weight: 900;
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    box-shadow: 8px 8px 0 black;
+}
+
+.cta-secondary:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0 black;
+}
+
+.trust-section {
+    background: black;
+    color: white;
+    border-top: 8px solid var(--primary);
+    border-bottom: 8px solid var(--primary);
+}
+
+.trust-section .company-logo {
+    color: white;
+}
+
+.features-section {
+    background: white;
+}
+
+.section-title {
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.feature-card {
+    background: white;
+    border: 6px solid black;
+    transition: all 0.2s ease;
+    box-shadow: 12px 12px 0 var(--accent);
+    border-radius: 0;
+}
+
+.feature-card:hover {
+    transform: translate(6px, 6px);
+    box-shadow: 6px 6px 0 var(--accent);
+}
+
+.feature-icon {
+    color: var(--primary);
+}
+
+.testimonials-section {
+    background: var(--accent);
+    border-top: 8px solid black;
+    border-bottom: 8px solid black;
+}
+
+.testimonial-card {
+    background: white;
+    border: 6px solid black;
+    border-radius: 0;
+}
+
+.pricing-section {
+    background: white;
+}
+
+.pricing-card {
+    background: white;
+    border: 6px solid black;
+    transition: all 0.2s ease;
+    box-shadow: 12px 12px 0 black;
+    border-radius: 0;
+}
+
+.pricing-card:hover {
+    transform: translate(6px, 6px);
+    box-shadow: 6px 6px 0 black;
+}
+
+.pricing-card-featured {
+    background: var(--primary);
+    color: white;
+    border: 6px solid black;
+    transform: scale(1.05);
+    box-shadow: 16px 16px 0 black;
+}
+
+.pricing-card-featured .section-subtitle,
+.pricing-card-featured p,
+.pricing-card-featured li {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    border: 4px solid black;
+    box-shadow: 4px 4px 0 var(--accent);
+}
+
+.pricing-cta {
+    background: black;
+    color: white;
+    border: 4px solid black;
+    transition: all 0.1s ease;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 0;
+    box-shadow: 6px 6px 0 var(--accent);
+}
+
+.pricing-cta:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--accent);
+}
+
+.pricing-card-featured .pricing-cta {
+    background: white;
+    color: black;
+}
+
+.cta-section {
+    background: black;
+    color: white;
+    border-top: 8px solid var(--primary);
+    border-bottom: 8px solid var(--primary);
+}
+
+.cta-box {
+    background: transparent;
+    border: 6px solid white;
+    border-radius: 0;
+}
+
+.email-input {
+    border: 4px solid black;
+    background: white;
+    color: black;
+    font-size: 18px;
+    border-radius: 0;
+    font-weight: 700;
+}
+
+.email-input:focus {
+    outline: 4px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.footer {
+    background: var(--accent);
+    color: black;
+    border-top: 8px solid black;
+}
+
+.footer a {
+    transition: all 0.2s ease;
+    color: black;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: var(--primary);
+}
+
+.footer .border-t {
+    border-color: black;
+    border-width: 4px;
+}

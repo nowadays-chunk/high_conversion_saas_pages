@@ -1,0 +1,213 @@
+/* Theme 2: Minimal Clean */
+
+:root {
+    --primary: #000000;
+    --secondary: #333333;
+    --accent: #666666;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --success: #00d084;
+}
+
+body {
+    background: white;
+    color: var(--text-primary);
+}
+
+.hero-section {
+    background: white;
+    color: var(--text-primary);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.badge {
+    background: #f5f5f5;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    color: var(--text-secondary);
+}
+
+.gradient-text {
+    color: var(--primary);
+    position: relative;
+}
+
+.gradient-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+}
+
+.cta-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.cta-primary:hover {
+    background: var(--secondary);
+}
+
+.cta-secondary {
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.cta-secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.trust-section {
+    background: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.features-section {
+    background: white;
+}
+
+.section-title {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary);
+}
+
+.feature-icon {
+    color: var(--primary);
+}
+
+.testimonials-section {
+    background: #fafafa;
+}
+
+.testimonial-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+}
+
+.pricing-section {
+    background: white;
+}
+
+.pricing-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.pricing-card:hover {
+    border-color: var(--primary);
+}
+
+.pricing-card-featured {
+    background: var(--primary);
+    color: white;
+    border: 2px solid var(--primary);
+    transform: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card-featured .section-subtitle,
+.pricing-card-featured p,
+.pricing-card-featured li {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 4px 16px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.pricing-cta {
+    background: var(--primary);
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.pricing-cta:hover {
+    background: var(--secondary);
+}
+
+.pricing-card-featured .pricing-cta {
+    background: white;
+    color: var(--primary);
+}
+
+.pricing-card-featured .pricing-cta:hover {
+    background: #f5f5f5;
+}
+
+.cta-section {
+    background: var(--primary);
+    color: white;
+}
+
+.cta-box {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.email-input {
+    border: 1px solid #e0e0e0;
+    background: white;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.footer {
+    background: #fafafa;
+    color: var(--text-primary);
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer a {
+    transition: all 0.2s ease;
+    color: var(--text-secondary);
+}
+
+.footer a:hover {
+    color: var(--primary);
+}

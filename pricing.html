@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - CloudSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link id="theme-link" rel="stylesheet" href="themes/theme-1.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .theme-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .theme-nav.collapsed {
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .theme-toggle-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-list {
+            margin-top: 15px;
+        }
+
+        .theme-btn {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-btn.active {
+            border-color: currentColor;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Theme Switcher -->
+    <div class="theme-nav" id="themeNav">
+        <button class="theme-toggle-btn" onclick="toggleThemeNav()"><i class="fas fa-palette"></i></button>
+        <div class="theme-list" id="themeList" style="display: none;">
+            <h3
+                style="margin-bottom: 12px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                Choose Theme</h3>
+            <button class="theme-btn active" data-theme="1" onclick="changeTheme(1)"
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"><i
+                    class="fas fa-gradient"></i> Modern Gradient</button>
+            <button class="theme-btn" data-theme="2" onclick="changeTheme(2)"
+                style="background: #f8f9fa; color: #212529;"><i class="fas fa-circle"></i> Minimal Clean</button>
+            <button class="theme-btn" data-theme="3" onclick="changeTheme(3)"
+                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;"><i
+                    class="fas fa-bolt"></i> Bold & Vibrant</button>
+            <button class="theme-btn" data-theme="4" onclick="changeTheme(4)"
+                style="background: #1a1a2e; color: #eee;"><i class="fas fa-moon"></i> Dark Premium</button>
+            <button class="theme-btn" data-theme="5" onclick="changeTheme(5)"
+                style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); color: #333;"><i
+                    class="fas fa-gem"></i> Glassmorphism</button>
+            <button class="theme-btn" data-theme="6" onclick="changeTheme(6)"
+                style="background: #000; color: #fff; border: 3px solid #000;"><i class="fas fa-square"></i>
+                Brutalist</button>
+            <button class="theme-btn" data-theme="7" onclick="changeTheme(7)"
+                style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #8b4513;"><i
+                    class="fas fa-cloud"></i> Soft Pastel</button>
+            <button class="theme-btn" data-theme="8" onclick="changeTheme(8)"
+                style="background: #003d82; color: white;"><i class="fas fa-building"></i> Corporate Pro</button>
+            <button class="theme-btn" data-theme="9" onclick="changeTheme(9)"
+                style="background: #000; color: #0ff; border: 2px solid #0ff;"><i class="fas fa-robot"></i> Neon
+                Cyber</button>
+            <button class="theme-btn" data-theme="10" onclick="changeTheme(10)"
+                style="background: linear-gradient(135deg, #2c1b47 0%, #5e3a7d 100%); color: #ffd700;"><i
+                    class="fas fa-crown"></i> Elegant Luxury</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-nav" style="padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">CloudSync</a>
+            <nav class="hidden md:flex gap-8">
+                <div class="relative group">
+                    <a href="#" class="font-semibold">Product <i class="fas fa-chevron-down text-xs ml-1"></i></a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
+                        <a href="features.html" class="block px-4 py-2 hover:bg-gray-100">Features</a>
+                        <a href="pricing.html" class="block px-4 py-2 hover:bg-gray-100">Pricing</a>
+                        <a href="security.html" class="block px-4 py-2 hover:bg-gray-100">Security</a>
+                        <a href="roadmap.html" class="block px-4 py-2 hover:bg-gray-100">Roadmap</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="#" class="font-semibold">Company <i class="fas fa-chevron-down text-xs ml-1"></i></a>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
+                        <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About</a>
+                        <a href="careers.html" class="block px-4 py-2 hover:bg-gray-100">Careers</a>
+                        <a href="blog.html" class="block px-4 py-2 hover:bg-gray-100">Blog</a>
+                        <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+                    </div>
+                </div>
+                <a href="docs.html" class="font-semibold">Docs</a>
+            </nav>
+            <div class="flex gap-4">
+                <a href="login.html" class="px-6 py-2 font-semibold">Login</a>
+                <a href="signup.html" class="cta-primary px-6 py-2 rounded-lg font-semibold">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Simple, Transparent Pricing</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">Choose the plan that fits your needs.
+                Upgrade or downgrade anytime.</p>
+            <div class="flex justify-center gap-4 mb-8">
+                <button class="px-6 py-3 rounded-lg font-semibold bg-white bg-opacity-20"
+                    onclick="showMonthly()">Monthly</button>
+                <button class="px-6 py-3 rounded-lg font-semibold bg-white bg-opacity-20" onclick="showYearly()">Yearly
+                    <span class="text-sm ml-2">(Save 20%)</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tables -->
+    <section id="pricing" class="pricing-section py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="pricing-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                    <p class="opacity-70 mb-6">For individuals and small teams</p>
+                    <div class="price mb-6">
+                        <span class="text-5xl font-bold">$9</span>
+                        <span class="text-xl opacity-70">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>100 GB
+                                storage</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Up to 5
+                                team members</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>30-day
+                                version history</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Email
+                                support</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Mobile
+                                apps</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>2FA
+                                security</span></li>
+                    </ul>
+                    <a href="signup.html" class="pricing-cta w-full py-3 rounded-lg font-semibold block text-center">Get
+                        Started</a>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="pricing-card pricing-card-featured p-8 rounded-xl relative">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                    <p class="opacity-70 mb-6">For growing businesses</p>
+                    <div class="price mb-6">
+                        <span class="text-5xl font-bold">$29</span>
+                        <span class="text-xl opacity-70">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>1 TB
+                                storage</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Unlimited team members</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>180-day
+                                version history</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Priority support</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Advanced analytics</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>API
+                                access</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Custom
+                                branding</span></li>
+                    </ul>
+                    <a href="signup.html" class="pricing-cta w-full py-3 rounded-lg font-semibold block text-center">Get
+                        Started</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                    <p class="opacity-70 mb-6">For large organizations</p>
+                    <div class="price mb-6">
+                        <span class="text-5xl font-bold">$99</span>
+                        <span class="text-xl opacity-70">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Unlimited storage</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Unlimited team members</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Unlimited version history</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>24/7
+                                dedicated support</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>Custom
+                                integrations</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>SSO &
+                                SAML</span></li>
+                        <li class="flex items-start gap-2"><i
+                                class="fas fa-check text-green-500 mt-1"></i><span>Advanced admin controls</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i><span>SLA
+                                guarantee</span></li>
+                    </ul>
+                    <a href="contact.html"
+                        class="pricing-cta w-full py-3 rounded-lg font-semibold block text-center">Contact Sales</a>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="mt-20 max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <details class="feature-card p-6 rounded-xl">
+                        <summary class="cursor-pointer font-bold text-lg mb-2">Can I switch plans anytime?</summary>
+                        <p class="opacity-80">Yes! You can upgrade or downgrade your plan at any time. Changes take
+                            effect immediately, and we'll prorate your billing accordingly.</p>
+                    </details>
+                    <details class="feature-card p-6 rounded-xl">
+                        <summary class="cursor-pointer font-bold text-lg mb-2">What payment methods do you accept?
+                        </summary>
+                        <p class="opacity-80">We accept all major credit cards (Visa, MasterCard, American Express) and
+                            PayPal. Enterprise customers can also pay via invoice.</p>
+                    </details>
+                    <details class="feature-card p-6 rounded-xl">
+                        <summary class="cursor-pointer font-bold text-lg mb-2">Is there a free trial?</summary>
+                        <p class="opacity-80">Yes! All plans come with a 14-day free trial. No credit card required to
+                            start your trial.</p>
+                    </details>
+                    <details class="feature-card p-6 rounded-xl">
+                        <summary class="cursor-pointer font-bold text-lg mb-2">What happens if I exceed my storage
+                            limit?</summary>
+                        <p class="opacity-80">We'll notify you when you're approaching your limit. You can either
+                            upgrade your plan or purchase additional storage à la carte.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-20">
+        <div class="container mx-auto px-6">
+            <div class="cta-box max-w-4xl mx-auto text-center p-12 rounded-2xl">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-xl mb-8 opacity-90">Start your 14-day free trial today. No credit card required.</p>
+                <a href="signup.html" class="cta-primary px-8 py-4 rounded-lg font-semibold inline-block">Start Free
+                    Trial <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-4">CloudSync</h4>
+                    <p class="opacity-70">Modern cloud storage for modern teams.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Product</h5>
+                    <ul class="space-y-2 opacity-70">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="roadmap.html">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Company</h5>
+                    <ul class="space-y-2 opacity-70">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Legal</h5>
+                    <ul class="space-y-2 opacity-70">
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="docs.html">Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t pt-8 text-center opacity-70">
+                <p>&copy; 2026 CloudSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let themeNavCollapsed = true;
+        function toggleThemeNav() { const nav = document.getElementById('themeNav'); const list = document.getElementById('themeList'); themeNavCollapsed = !themeNavCollapsed; if (themeNavCollapsed) { nav.classList.add('collapsed'); list.style.display = 'none'; } else { nav.classList.remove('collapsed'); list.style.display = 'block'; } }
+        function changeTheme(themeNumber) { document.getElementById('theme-link').href = `themes/theme-${themeNumber}.css`; document.querySelectorAll('.theme-btn').forEach(btn => btn.classList.remove('active')); document.querySelector(`[data-theme="${themeNumber}"]`).classList.add('active'); document.body.style.opacity = '0.8'; setTimeout(() => { document.body.style.opacity = '1'; }, 200); }
+        function showMonthly() { /* Price toggle logic */ }
+        function showYearly() { /* Price toggle logic */ }
+    </script>
+</body>
+
+</html>
