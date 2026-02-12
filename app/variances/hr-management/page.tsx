@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme07Page() {
-    const theme = getThemeBySlug('theme-07-hr-management');
+    const theme = getThemeBySlug('hr-management');
 
     if (!theme) {
         notFound();

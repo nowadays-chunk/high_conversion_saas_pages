@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme04Page() {
-    const theme = getThemeBySlug('theme-04-crm');
+    const theme = getThemeBySlug('crm');
 
     if (!theme) {
         notFound();

@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme09Page() {
-    const theme = getThemeBySlug('theme-09-cybersecurity');
+    const theme = getThemeBySlug('cybersecurity');
 
     if (!theme) {
         notFound();

@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme08Page() {
-    const theme = getThemeBySlug('theme-08-ecommerce');
+    const theme = getThemeBySlug('ecommerce');
 
     if (!theme) {
         notFound();

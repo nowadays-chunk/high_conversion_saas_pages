@@ -87,7 +87,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Link href={`/${theme.slug}`}>
+                <Link href={`/variances/${theme.slug}`}>
                   <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-gray-100 hover:border-gray-200">
                     {/* Color Preview Banner */}
                     <div

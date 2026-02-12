@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme03Page() {
-    const theme = getThemeBySlug('theme-03-email-marketing');
+    const theme = getThemeBySlug('email-marketing');
 
     if (!theme) {
         notFound();

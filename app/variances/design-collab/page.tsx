@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme05Page() {
-    const theme = getThemeBySlug('theme-05-design-collab');
+    const theme = getThemeBySlug('design-collab');
 
     if (!theme) {
         notFound();

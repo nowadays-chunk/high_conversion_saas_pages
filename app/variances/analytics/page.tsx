@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme01Page() {
-    const theme = getThemeBySlug('theme-01-analytics');
+    const theme = getThemeBySlug('analytics');
 
     if (!theme) {
         notFound();

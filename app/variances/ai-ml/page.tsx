@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme10Page() {
-    const theme = getThemeBySlug('theme-10-ai-ml');
+    const theme = getThemeBySlug('ai-ml');
 
     if (!theme) {
         notFound();

@@ -24,7 +24,7 @@ export const themes: Theme[] = [
     {
         id: 1,
         name: "Classic Professional",
-        slug: "theme-01-analytics",
+        slug: "analytics",
         description: "Trust-building design with traditional Z-pattern hero",
         ideology: "Growth Design, CRO, Trust-Building",
         colors: {
@@ -45,7 +45,7 @@ export const themes: Theme[] = [
     {
         id: 2,
         name: "Modern Vibrant",
-        slug: "theme-02-project-mgmt",
+        slug: "project-mgmt",
         description: "Split-screen design with bold purple tones",
         ideology: "Innovation, Collaboration, Energy",
         colors: {
@@ -66,7 +66,7 @@ export const themes: Theme[] = [
     {
         id: 3,
         name: "Dark Premium",
-        slug: "theme-03-email-marketing",
+        slug: "email-marketing",
         description: "Video hero with dark luxury aesthetics",
         ideology: "Premium, Emotion-Driven, Storytelling",
         colors: {
@@ -87,7 +87,7 @@ export const themes: Theme[] = [
     {
         id: 4,
         name: "Minimal Swiss",
-        slug: "theme-04-crm",
+        slug: "crm",
         description: "Maximum white space, bold typography, minimal color",
         ideology: "Swiss Design, Clarity, Simplicity",
         colors: {
@@ -108,7 +108,7 @@ export const themes: Theme[] = [
     {
         id: 5,
         name: "Bold Gradient",
-        slug: "theme-05-design-collab",
+        slug: "design-collab",
         description: "High-energy gradients with vibrant multi-color palette",
         ideology: "Creative, Dynamic, Design-Forward",
         colors: {
@@ -129,7 +129,7 @@ export const themes: Theme[] = [
     {
         id: 6,
         name: "Nature Organic",
-        slug: "theme-06-api-platform",
+        slug: "api-platform",
         description: "Dark mode with code snippets and technical focus",
         ideology: "Developer-First, Technical, Growth",
         colors: {
@@ -150,7 +150,7 @@ export const themes: Theme[] = [
     {
         id: 7,
         name: "Glassmorphism Premium",
-        slug: "theme-07-hr-management",
+        slug: "hr-management",
         description: "Frosted glass effects with translucent overlays",
         ideology: "Premium, Human-Centric, Modern",
         colors: {
@@ -171,7 +171,7 @@ export const themes: Theme[] = [
     {
         id: 8,
         name: "Brutalist Statement",
-        slug: "theme-08-ecommerce",
+        slug: "ecommerce",
         description: "Raw, bold, asymmetric with high contrast",
         ideology: "Bold, Unconventional, Statement",
         colors: {
@@ -192,7 +192,7 @@ export const themes: Theme[] = [
     {
         id: 9,
         name: "Sunset Warm",
-        slug: "theme-09-cybersecurity",
+        slug: "cybersecurity",
         description: "Parallax depth with warm orange tones",
         ideology: "Security, Trust, Depth",
         colors: {
@@ -213,7 +213,7 @@ export const themes: Theme[] = [
     {
         id: 10,
         name: "Neumorphism Soft",
-        slug: "theme-10-ai-ml",
+        slug: "ai-ml",
         description: "Soft shadows with embossed, tactile elements",
         ideology: "Futuristic, Intelligent, Soft",
         colors: {

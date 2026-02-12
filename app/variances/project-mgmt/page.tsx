@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme02Page() {
-    const theme = getThemeBySlug('theme-02-project-mgmt');
+    const theme = getThemeBySlug('project-mgmt');
 
     if (!theme) {
         notFound();

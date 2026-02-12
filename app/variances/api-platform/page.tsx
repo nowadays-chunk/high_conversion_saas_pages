@@ -3,7 +3,7 @@ import { getThemeBySlug } from '@/lib/themes';
 import { notFound } from 'next/navigation';
 
 export default function Theme06Page() {
-    const theme = getThemeBySlug('theme-06-api-platform');
+    const theme = getThemeBySlug('api-platform');
 
     if (!theme) {
         notFound();
