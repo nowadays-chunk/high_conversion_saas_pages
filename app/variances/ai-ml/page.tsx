@@ -13,6 +13,7 @@ export default function Theme10Page() {
 }
 
 export const metadata = {
-    title: 'MindForge AI - AI/ML Platform',
-    description: 'Intelligent automation for modern teams powered by AI',
+    title: "Sentient AI - Next-Gen ML Solutions",
+    description: "Building the neural pathways of the future. Harness the power of advanced machine learning and sentient AI for your enterprise.",
+    keywords: ["AI", "machine learning", "ML solutions", "artificial intelligence", "tech startup"],
 };

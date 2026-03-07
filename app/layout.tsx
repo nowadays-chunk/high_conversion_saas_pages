@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "High-Conversion SaaS Landing Pages | 10 Unique Themes",
   description: "Explore 10 professionally crafted high-conversion SaaS landing pages built with Next.js, TypeScript, and Tailwind CSS. Each theme showcases unique layouts and design aesthetics following Conversion-Centered Design principles.",
+  keywords: ["SaaS", "landing pages", "UI components", "Next.js", "Tailwind CSS", "conversion-centered design", "marketing themes"],
 };
 
 export default function RootLayout({

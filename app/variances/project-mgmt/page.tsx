@@ -13,6 +13,7 @@ export default function Theme02Page() {
 }
 
 export const metadata = {
-    title: 'TeamFlow - Project Management',
-    description: 'Streamline projects, empower teams with modern collaboration tools',
+    title: "FocusFlow - Streamlined Project Management",
+    description: "Streamline projects, empower teams with modern collaboration tools. FocusFlow is the command center for your projects.",
+    keywords: ["project management", "team collaboration", "productivity tool", "SaaS PM", "FocusFlow"],
 };

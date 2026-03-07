@@ -13,6 +13,7 @@ export default function Theme08Page() {
 }
 
 export const metadata = {
-    title: 'ShopZero - E-commerce Platform',
-    description: 'E-commerce without the complexity for modern brands',
+    title: "ScaleUp Commerce - The Future of Online Retail",
+    description: "E-commerce without the complexity for modern brands. Scale your business with the ShopZero platform.",
+    keywords: ["ecommerce platform", "online shop", "shopping cart", "retail SaaS", "ScaleUp Commerce"],
 };

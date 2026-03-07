@@ -13,6 +13,7 @@ export default function Theme01Page() {
 }
 
 export const metadata = {
-    title: 'DataViz Pro - Analytics Platform',
-    description: 'Transform data into actionable insights with our powerful analytics platform',
+    title: "DataSight - Powering Business Intelligence",
+    description: "Transform raw data into actionable insights. DataSight provides the analytics and intelligence your business needs to grow.",
+    keywords: ["analytics", "business intelligence", "BI tool", "data visualization", "SaaS analytics"],
 };

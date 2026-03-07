@@ -13,6 +13,7 @@ export default function Theme06Page() {
 }
 
 export const metadata = {
-    title: 'APIHub - Developer API Platform',
-    description: 'Build faster with powerful APIs for developers',
+    title: "Connectify - The Developer-First API Hub",
+    description: "Integrate, scale, and manage your APIs with ease. Connectify is the platform built for developers, by developers.",
+    keywords: ["API platform", "API management", "developer tools", "SaaS integration", "API hub"],
 };

@@ -13,6 +13,7 @@ export default function Theme04Page() {
 }
 
 export const metadata = {
-    title: 'SalesCore - Simple CRM',
-    description: 'Simple CRM, powerful results for modern sales teams',
+    title: "RelateFlow - Building Better Customer Relationships",
+    description: "Build, grow, and maintain your customer relationships with RelateFlow. The CRM built for modern sales teams.",
+    keywords: ["CRM", "customer relationship management", "sales tool", "customer success", "SaaS CRM"],
 };

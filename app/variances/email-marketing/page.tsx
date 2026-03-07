@@ -13,6 +13,7 @@ export default function Theme03Page() {
 }
 
 export const metadata = {
-    title: 'MailMaster - Email Marketing',
-    description: 'Automate campaigns, maximize conversions with powerful email marketing',
+    title: "InboxPulse - Intelligent Email Automation",
+    description: "Automate campaigns, maximize conversions with powerful email marketing. InboxPulse: the tool for modern marketers.",
+    keywords: ["email marketing", "automation", "campaign management", "marketing SaaS", "InboxPulse"],
 };

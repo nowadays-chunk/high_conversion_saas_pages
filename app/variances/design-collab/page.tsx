@@ -13,6 +13,7 @@ export default function Theme05Page() {
 }
 
 export const metadata = {
-    title: 'DesignSync - Design Collaboration',
-    description: 'Where creativity meets collaboration for modern design teams',
+    title: "CanvasSync - Creative Collaboration Reimagined",
+    description: "Where creativity meets collaboration. DesignSync is the platform for modern design teams to build together.",
+    keywords: ["design collaboration", "creative tools", "team collaboration", "design workflow", "SaaS design"],
 };

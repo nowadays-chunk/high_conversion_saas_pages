@@ -13,6 +13,7 @@ export default function Theme07Page() {
 }
 
 export const metadata = {
-    title: 'PeopleFirst - HR Management',
-    description: 'HR software that scales with you and your team',
+    title: "PeopleLink - Empowering Your Workforce",
+    description: "HR software that scales with you and your team. Manage your workforce with clarity and purpose using PeopleLink.",
+    keywords: ["HR management", "workforce management", "people management", "HR SaaS", "PeopleLink"],
 };

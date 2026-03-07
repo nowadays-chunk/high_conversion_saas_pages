@@ -13,6 +13,7 @@ export default function Theme09Page() {
 }
 
 export const metadata = {
-    title: 'ShieldAI - Cybersecurity Suite',
-    description: 'Next-gen protection for your business with AI-powered security',
+    title: "ShieldGuard - Enterprise-Grade Security",
+    description: "Next-gen protection for your business with AI-powered security. Secure your infrastructure with ShieldGuard.",
+    keywords: ["cybersecurity", "security suite", "AI security", "enterprise protection", "SaaS security"],
 };
